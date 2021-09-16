@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./styles.css">
+    
+    <title>Todo App</title>
+</head>
+<body>
+  <div class="app-container">
+      <div class="todo-app">
+          <header>
+              <div class="date-box">
+                  <div class="date-day"></div>
+                  <div class="date-month-year">
+                      <span id="monthName"></span>
+                      <span></span>
+                  </div>
+              </div>
+              <div class="date-day-name">Wednesday</div>
+          </header>
+
+          <div class="tasks-list">
+          </div>
+
+         <button class="add-task-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="modal-overlay hidden">
+            <div class="modal-container">
+                <i class="fas fa-times close-modal-btn"></i>
+                <h3>Add your task!</h3>
+                <input type="text" id="taskName" class="task-input" autocomplete="off">
+                <div class="add-task-btn-container">
+                    <button id="addTask">Add task</button>
+                </div>
+            </div>
+        </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

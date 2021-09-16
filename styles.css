@@ -1,0 +1,266 @@
+:root {
+    --white: #fff8f2;
+    --xlFont: 28px;
+  }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(10px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #5f5c58;
+}
+
+.app-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--white);
+}
+
+.todo-app {
+    position: relative;
+    height: 600px;
+    width: 400px;
+    margin: 150px 0;
+    padding: 60px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 30px 0 #e2dcd7;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-box {
+    display: flex;
+    align-items: center;
+}
+
+.date-day {
+    font-size: var(--xlFont);
+    margin-right: 8px;
+}
+
+.date-month-year > span {
+    display: block;
+    font-size: 11px;
+}
+
+.date-month-year > span:last-of-type {
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+.date-day-name {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.add-task-btn {
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #83e483;
+    box-shadow: 2px 3px 15px 0 #aba9a8;
+}
+
+.add-task-btn > i {
+    color: #64b765;
+    font-size: 18px;
+}
+
+.modal-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #5454549e;
+    animation-name: fadeIn;
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.modal-container {
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 250px);
+    width: 500px;
+    height: 300px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 8px;
+    animation-name: slideUp;
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.modal-container > h3 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.task-input {
+    width: 100%;
+    border: 1px solid #a5a3a1;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #5f5c58;
+}
+
+.input-error{
+    border: 2px solid red;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #5f5c58;
+}
+
+.add-task-btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-task-btn-container-error{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: red;
+}
+
+
+.add-task-btn-container > button {
+    width: 100px;
+    margin-top: 20px;
+    padding: 8px 12px;
+    background-color: #64b765;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 2px 3px 10px 0 #aba9a8;
+}
+
+.add-task-btn-container > button:active {
+    box-shadow: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.tasks-list {
+    padding-top: 40px;
+}
+
+.check-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 50%;
+    border: 1px solid #5f5c58;
+}
+
+.task-conteiner-with-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-conteiner-with-delete-span {
+    display: flex;
+    align-items: center;
+}
+
+.delete-btn > i{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+
+}
+
+.task-conteiner-with-delete-span > .delete-btn { 
+    display: none;
+
+}
+
+
+.task-conteiner-with-delete-span:hover > .delete-btn {
+display: flex;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 20px;
+height: 20px;
+margin-bottom: 3px;
+margin-right: 10px;
+margin-top: 3px;
+border-radius: 50%;
+box-shadow: 1px #aba9a8;
+}
+
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-container i {
+    display: none;
+    color: #64b765;
+    font-size: 11px;
+}
+
+.task-container.completed > .check-btn {
+    border-color: #64b765;
+}
+.task-container.completed > p {
+    color: rgb(174, 174, 174);
+}
+
+.task-container.completed i {
+    display: inline;
+}
+.task-conteiner-with-delete-span.completed > p{
+    color: rgb(174, 174, 174);
+}
